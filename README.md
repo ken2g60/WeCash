@@ -2,4 +2,4 @@
 
 A simple iOS App to track your expenses.
 
- <img src="img/home.png" width="400" height="400">
+ <img src="img/home.png" width="600" height="600">
