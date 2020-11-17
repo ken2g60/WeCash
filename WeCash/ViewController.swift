@@ -23,14 +23,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // self.navigationController?.navigationBar.topItem?.title = "Home"
+        
         // dummy data
-        balance.text = "$10,000"
-        navigationItem.title = "WeCash"
+        // balance.text = "$10,000"
+
         
         // balance tapped
         let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.tapBalanceWithdraw))
-        balance.isUserInteractionEnabled = true
-        balance.addGestureRecognizer(tap)
+//        balance.isUserInteractionEnabled = true
+//        balance.addGestureRecognizer(tap)
         
         setNeedsStatusBarAppearanceUpdate()
         
@@ -71,7 +73,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let record = try! context.fetch(request)
-        // print(record)
         for records in record {
             print(records)
         }
@@ -88,7 +89,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: "history", for: indexPath) as! HistoryTableCell
         cell.amount.text = "$ \(expenses[indexPath.row].amount)"
         cell.date.text = expenses[indexPath.row].created_at
-        // cell.transactionType.text = expenses[indexPath.row].category
         return cell
     }
     

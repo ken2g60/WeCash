@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0412C08B25627DCD006C49FF /* DepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0412C08A25627DCD006C49FF /* DepositViewController.swift */; };
+		0412C08E25627DF9006C49FF /* WithdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0412C08D25627DF9006C49FF /* WithdrawViewController.swift */; };
+		0412C09625628DF9006C49FF /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0412C09525628DF9006C49FF /* Validation.swift */; };
+		0412C09A25629221006C49FF /* Deposit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0412C09925629221006C49FF /* Deposit.swift */; };
+		0412C09D2562972B006C49FF /* Withdraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0412C09C2562972B006C49FF /* Withdraw.swift */; };
+		0412C0A12562E1F7006C49FF /* WithdrawalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0412C0A02562E1F7006C49FF /* WithdrawalTableViewCell.swift */; };
+		0412C0A42562E206006C49FF /* DepositTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0412C0A32562E206006C49FF /* DepositTableViewCell.swift */; };
 		04F5A6D7252E9728001CE798 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5A6D6252E9728001CE798 /* AppDelegate.swift */; };
 		04F5A6D9252E9728001CE798 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5A6D8252E9728001CE798 /* SceneDelegate.swift */; };
 		04F5A6DB252E9728001CE798 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5A6DA252E9728001CE798 /* ViewController.swift */; };
@@ -33,6 +40,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0412C08A25627DCD006C49FF /* DepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositViewController.swift; sourceTree = "<group>"; };
+		0412C08D25627DF9006C49FF /* WithdrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawViewController.swift; sourceTree = "<group>"; };
+		0412C09525628DF9006C49FF /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		0412C09925629221006C49FF /* Deposit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deposit.swift; sourceTree = "<group>"; };
+		0412C09C2562972B006C49FF /* Withdraw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Withdraw.swift; sourceTree = "<group>"; };
+		0412C0A02562E1F7006C49FF /* WithdrawalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalTableViewCell.swift; sourceTree = "<group>"; };
+		0412C0A32562E206006C49FF /* DepositTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositTableViewCell.swift; sourceTree = "<group>"; };
 		04F5A6D3252E9728001CE798 /* WeCash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeCash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F5A6D6252E9728001CE798 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F5A6D8252E9728001CE798 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,9 +85,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0412C09425628DE8006C49FF /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0412C09525628DF9006C49FF /* Validation.swift */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
 		04F5A6CA252E9728001CE798 = {
 			isa = PBXGroup;
 			children = (
+				0412C09425628DE8006C49FF /* helpers */,
 				04F5A6EC252E9810001CE798 /* Model */,
 				04F5A6EE252E9A33001CE798 /* View */,
 				04F5A6EB252E97ED001CE798 /* Controller */,
@@ -111,6 +134,8 @@
 			children = (
 				04F5A6F3252EAAD7001CE798 /* CashOutTableViewController.swift */,
 				04F5A6F9252EADBA001CE798 /* AddFundTableViewController.swift */,
+				0412C08A25627DCD006C49FF /* DepositViewController.swift */,
+				0412C08D25627DF9006C49FF /* WithdrawViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -119,6 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				04F5A6F6252EAB7D001CE798 /* History.swift */,
+				0412C09925629221006C49FF /* Deposit.swift */,
+				0412C09C2562972B006C49FF /* Withdraw.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -127,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				04F5A6F0252E9C5F001CE798 /* HistoryTableCell.swift */,
+				0412C0A02562E1F7006C49FF /* WithdrawalTableViewCell.swift */,
+				0412C0A32562E206006C49FF /* DepositTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -243,10 +272,17 @@
 				04F5A6F7252EAB7D001CE798 /* History.swift in Sources */,
 				04F5A6F4252EAAD7001CE798 /* CashOutTableViewController.swift in Sources */,
 				04F5A6DB252E9728001CE798 /* ViewController.swift in Sources */,
+				0412C09A25629221006C49FF /* Deposit.swift in Sources */,
 				04F5A6D7252E9728001CE798 /* AppDelegate.swift in Sources */,
+				0412C08E25627DF9006C49FF /* WithdrawViewController.swift in Sources */,
 				04F5A6D9252E9728001CE798 /* SceneDelegate.swift in Sources */,
+				0412C0A42562E206006C49FF /* DepositTableViewCell.swift in Sources */,
 				04F5A6FA252EADBA001CE798 /* AddFundTableViewController.swift in Sources */,
+				0412C09D2562972B006C49FF /* Withdraw.swift in Sources */,
 				04F5A71E252FBA12001CE798 /* WeCash.xcdatamodeld in Sources */,
+				0412C0A12562E1F7006C49FF /* WithdrawalTableViewCell.swift in Sources */,
+				0412C08B25627DCD006C49FF /* DepositViewController.swift in Sources */,
+				0412C09625628DF9006C49FF /* Validation.swift in Sources */,
 				04F5A6F1252E9C5F001CE798 /* HistoryTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

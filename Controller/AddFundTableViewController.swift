@@ -8,20 +8,13 @@
 import UIKit
 import CoreData
 
-class AddFundTableViewController: UITableViewController, UITextFieldDelegate {
-  
-    
-    
-    var dropDownList = ["Food Items", "Utilties Bills", "Family", "Internet Bills", "Other"]
-    
-    
+class AddFundTableViewController: UITableViewController {
+
     var expenses: ExpensesMO!
-    @IBOutlet weak var categoryPicker: UIPickerView!
     @IBOutlet weak var addFund: UIBarItem!
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var amount: UITextField!
     @IBOutlet weak var emailAddress: UITextField!
-    @IBOutlet weak var categoryExpenses: UITextField!
     var categorySelected: String? = nil
     
     
@@ -30,6 +23,7 @@ class AddFundTableViewController: UITableViewController, UITextFieldDelegate {
         phoneNumber.becomeFirstResponder()
         
     }
+    
     
     @IBAction func depositTapped(_ sender: UIButton){
         // process the deposit
@@ -59,17 +53,29 @@ class AddFundTableViewController: UITableViewController, UITextFieldDelegate {
             let alert = UIAlertController(title: "", message: "Saved Expenses", preferredStyle: .alert)
             let okButton = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(okButton)
-            self.present(alert, animated: true, completion: nil)
-            
-            
-            appDelegate.saveContext()
-            self.navigationController?.popToRootViewController(animated: true)
+            self.present(alert, animated: true, completion: { () in
+                appDelegate.saveContext()
+                // redirect data saving the data
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
 
+            })
                     
-            }
-            
         }
-        
     }
-   
+}
 
+extension AddFundTableViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case phoneNumber:
+            amount.becomeFirstResponder()
+        case amount:
+            emailAddress.becomeFirstResponder()
+        default:
+            emailAddress.resignFirstResponder()
+        }
+        return true
+    }
+}

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uuW-hK-Cr5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uuW-hK-Cr5">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17502"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,13 +16,13 @@
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Home" id="BYZ-38-t0r" customClass="ViewController" customModule="WeCash" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" title="Home" id="BYZ-38-t0r" customClass="ViewController" customModule="WeCash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gFc-KT-y3u">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="KyI-LI-0qd">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
@@ -34,12 +34,28 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0p-2P-cQ0">
+                                            <rect key="frame" x="370" y="10" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="34" id="m10-Dx-nt9"/>
+                                                <constraint firstAttribute="width" constant="35" id="zD3-h5-yIA"/>
+                                            </constraints>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" backgroundImage="plus" catalog="system">
+                                                <color key="titleColor" red="0.93333333330000001" green="0.6588235294" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <segue destination="fbD-dn-pWY" kind="show" identifier="addDeposit" id="1JM-WA-oZF"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                     <constraints>
                                         <constraint firstItem="ase-DL-0VQ" firstAttribute="top" secondItem="KyI-LI-0qd" secondAttribute="top" constant="86" id="5ix-zO-l1z"/>
                                         <constraint firstItem="ase-DL-0VQ" firstAttribute="leading" secondItem="KyI-LI-0qd" secondAttribute="leading" constant="114" id="VDU-GY-f0f"/>
+                                        <constraint firstItem="U0p-2P-cQ0" firstAttribute="top" secondItem="KyI-LI-0qd" secondAttribute="top" constant="8" id="YMh-3f-bxq"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ase-DL-0VQ" secondAttribute="trailing" constant="20" symbolic="YES" id="hZC-JB-XvI"/>
+                                        <constraint firstAttribute="trailing" secondItem="U0p-2P-cQ0" secondAttribute="trailing" constant="8" id="vWr-5x-l9e"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
@@ -112,13 +128,8 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gFc-KT-y3u" secondAttribute="bottom" id="bCL-aq-eEI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qDM-fT-2qi">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="H1s-K0-7nc">
-                            <connections>
-                                <segue destination="fbD-dn-pWY" kind="show" identifier="addDeposit" id="D5m-yu-8zE"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" selectedImage="homekit" id="SHM-xd-etw"/>
+                    <navigationItem key="navigationItem" id="qDM-fT-2qi"/>
                     <connections>
                         <outlet property="balance" destination="ase-DL-0VQ" id="8lh-l4-Bb3"/>
                         <outlet property="tableView" destination="gFc-KT-y3u" id="f5w-UJ-NLg"/>
@@ -127,12 +138,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="93.75"/>
+            <point key="canvasLocation" x="2347.826086956522" y="93.75"/>
         </scene>
         <!--Add Funds-->
         <scene sceneID="A4l-Gh-QQk">
             <objects>
-                <tableViewController id="fbD-dn-pWY" customClass="AddFundTableViewController" customModule="WeCash" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AddFundTableViewController" id="fbD-dn-pWY" customClass="AddFundTableViewController" customModule="WeCash" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NRc-MP-U1V">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -288,7 +299,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jhe-mk-Sns" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1962.3188405797102" y="93.75"/>
+            <point key="canvasLocation" x="3583" y="-726"/>
         </scene>
         <!--Cash Out-->
         <scene sceneID="Va7-Dq-ghW">
@@ -405,29 +416,218 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UmL-c5-6IQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1962" y="843"/>
+            <point key="canvasLocation" x="3584" y="94"/>
+        </scene>
+        <!--DepositTableViewController-->
+        <scene sceneID="G6s-6n-XXw">
+            <objects>
+                <viewController title="DepositTableViewController" id="H9y-r5-tSo" customClass="DepositViewController" customModule="WeCash" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F6K-0C-ZuW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8nz-me-dcS">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="depositCell" rowHeight="100" id="rls-pN-TG3" customClass="DepositTableViewCell" customModule="WeCash" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rls-pN-TG3" id="j5o-vL-Iu9">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollarsign.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="TEn-33-741">
+                                                    <rect key="frame" x="20" y="11" width="50" height="49"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="4S9-5x-gF4"/>
+                                                        <constraint firstAttribute="height" constant="50" id="Eej-W9-7Wx"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8g3-ht-Y4y" userLabel="Deposit Amount">
+                                                    <rect key="frame" x="334" y="11" width="60" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="SqJ-jc-6No" userLabel="Depoist Date">
+                                                    <rect key="frame" x="358" y="63" width="36" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deposit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="S7Q-L9-gPC" userLabel="DepositBadge">
+                                                    <rect key="frame" x="78" y="11" width="59" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="SqJ-jc-6No" secondAttribute="bottom" constant="5" id="KYA-Oj-Dle"/>
+                                                <constraint firstItem="S7Q-L9-gPC" firstAttribute="leading" secondItem="TEn-33-741" secondAttribute="trailing" constant="8" id="Pgv-aL-TcO"/>
+                                                <constraint firstItem="S7Q-L9-gPC" firstAttribute="top" secondItem="j5o-vL-Iu9" secondAttribute="topMargin" id="UEU-Ga-UAg"/>
+                                                <constraint firstItem="TEn-33-741" firstAttribute="leading" secondItem="j5o-vL-Iu9" secondAttribute="leading" constant="20" symbolic="YES" id="UVG-Lu-xbW"/>
+                                                <constraint firstItem="8g3-ht-Y4y" firstAttribute="top" secondItem="j5o-vL-Iu9" secondAttribute="topMargin" id="YVn-vH-kSG"/>
+                                                <constraint firstItem="SqJ-jc-6No" firstAttribute="trailing" secondItem="j5o-vL-Iu9" secondAttribute="trailingMargin" id="feb-Ds-7zl"/>
+                                                <constraint firstAttribute="bottom" secondItem="TEn-33-741" secondAttribute="bottom" constant="39.5" id="inV-hR-GrK"/>
+                                                <constraint firstItem="S7Q-L9-gPC" firstAttribute="leading" secondItem="TEn-33-741" secondAttribute="trailing" constant="8" id="itE-zU-6eI"/>
+                                                <constraint firstItem="TEn-33-741" firstAttribute="top" secondItem="j5o-vL-Iu9" secondAttribute="top" constant="10.5" id="tK0-So-aZx"/>
+                                                <constraint firstItem="8g3-ht-Y4y" firstAttribute="trailing" secondItem="j5o-vL-Iu9" secondAttribute="trailingMargin" id="zNa-vH-mXk"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="amountLabel" destination="8g3-ht-Y4y" id="Npu-rK-9PW"/>
+                                            <outlet property="dateLabel" destination="SqJ-jc-6No" id="JEn-cX-r5M"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="H9y-r5-tSo" id="JfO-2X-acT"/>
+                                    <outlet property="delegate" destination="H9y-r5-tSo" id="evb-jV-wgH"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZLk-GX-wIw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Deposit" image="dollarsign.circle" catalog="system" id="INv-HS-bgP"/>
+                    <navigationItem key="navigationItem" id="oXz-th-8tZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ifb-n3-nhQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1883" y="933"/>
+        </scene>
+        <!--withdrawalTableViewController-->
+        <scene sceneID="iW4-vo-HRX">
+            <objects>
+                <viewController title="withdrawalTableViewController" id="7sY-qF-XOo" customClass="WithdrawViewController" customModule="WeCash" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="06Z-yg-zvq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="III-N9-Y2R">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="withdrawCell" rowHeight="100" id="Yjk-nA-kK2" customClass="WithdrawalTableViewCell" customModule="WeCash" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yjk-nA-kK2" id="Cvi-UL-YYJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollarsign.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Pf0-Pn-bui">
+                                                    <rect key="frame" x="20" y="14" width="50" height="49"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="9bH-xG-79O"/>
+                                                        <constraint firstAttribute="width" secondItem="Pf0-Pn-bui" secondAttribute="height" multiplier="1:1" id="UBI-2J-lyg"/>
+                                                        <constraint firstAttribute="width" constant="50" id="VTm-fF-oWt"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="iWy-XX-QDS">
+                                                    <rect key="frame" x="334" y="14" width="60" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="DOZ-hi-DV9">
+                                                    <rect key="frame" x="358" y="66" width="36" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Withdrawal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="hjg-fj-BEo">
+                                                    <rect key="frame" x="78" y="14" width="85" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="iWy-XX-QDS" firstAttribute="trailing" secondItem="Cvi-UL-YYJ" secondAttribute="trailingMargin" id="AoY-ZV-Paw"/>
+                                                <constraint firstItem="DOZ-hi-DV9" firstAttribute="trailing" secondItem="Cvi-UL-YYJ" secondAttribute="trailingMargin" id="J1D-DX-Jp6"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="DOZ-hi-DV9" secondAttribute="bottom" constant="2" id="TUl-8W-urV"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Pf0-Pn-bui" secondAttribute="bottom" constant="25.5" id="UFS-fB-sbp"/>
+                                                <constraint firstItem="Pf0-Pn-bui" firstAttribute="top" secondItem="Cvi-UL-YYJ" secondAttribute="topMargin" constant="2.5" id="W6w-eO-qA2"/>
+                                                <constraint firstItem="iWy-XX-QDS" firstAttribute="top" secondItem="Cvi-UL-YYJ" secondAttribute="topMargin" constant="3" id="X2d-gC-4mR"/>
+                                                <constraint firstItem="Pf0-Pn-bui" firstAttribute="leading" secondItem="Cvi-UL-YYJ" secondAttribute="leadingMargin" id="aKy-qe-zgB"/>
+                                                <constraint firstItem="hjg-fj-BEo" firstAttribute="leading" secondItem="Pf0-Pn-bui" secondAttribute="trailing" constant="8" symbolic="YES" id="cz2-3c-OJe"/>
+                                                <constraint firstItem="hjg-fj-BEo" firstAttribute="top" secondItem="Cvi-UL-YYJ" secondAttribute="topMargin" constant="3" id="f6N-qV-vFw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="amountLabel" destination="iWy-XX-QDS" id="Kia-Ao-3Lm"/>
+                                            <outlet property="dateLabel" destination="DOZ-hi-DV9" id="XMk-Lx-cZZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="7sY-qF-XOo" id="kFU-vT-tFL"/>
+                                    <outlet property="delegate" destination="7sY-qF-XOo" id="kIP-7N-g5I"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Xl4-Ei-HUY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Xl4-Ei-HUY" firstAttribute="bottom" secondItem="III-N9-Y2R" secondAttribute="bottom" id="2Rp-CP-HV2"/>
+                            <constraint firstItem="Xl4-Ei-HUY" firstAttribute="trailing" secondItem="III-N9-Y2R" secondAttribute="trailing" id="Br6-34-56q"/>
+                            <constraint firstItem="III-N9-Y2R" firstAttribute="top" secondItem="Xl4-Ei-HUY" secondAttribute="top" id="YP2-wn-xf8"/>
+                            <constraint firstItem="III-N9-Y2R" firstAttribute="leading" secondItem="Xl4-Ei-HUY" secondAttribute="leading" id="wSM-jL-CQb"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Withdraws" image="dollarsign.circle" catalog="system" selectedImage="dollarsign.circle" id="trJ-VK-yUK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ju7-bP-lPd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3257.971014492754" y="932.8125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gHR-gj-B7U">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uuW-hK-Cr5" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="tVw-Wq-Gex">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tVw-Wq-Gex">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="CwD-ma-a3v"/>
+                        <segue destination="TxF-Ng-ymK" kind="relationship" relationship="rootViewController" id="CwD-ma-a3v"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TBP-rS-Urk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Kpg-R7-TqW">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="TxF-Ng-ymK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="fgL-0b-0pA"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h4F-tN-ozJ">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ouE-64-hg0"/>
+                        <segue destination="7sY-qF-XOo" kind="relationship" relationship="viewControllers" id="F0J-gc-ImT"/>
+                        <segue destination="H9y-r5-tSo" kind="relationship" relationship="viewControllers" id="JdD-BR-J5S"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YjZ-Dz-qAA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="93.75"/>
+        </scene>
     </scenes>
     <resources>
         <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
+        <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
